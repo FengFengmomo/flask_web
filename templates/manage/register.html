@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../../static/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap.min.js"></script>
+    <link href="../../static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../../static/css/bootstrap.css" />
+</head>
+<body>
+    <div class="cover">
+      <div class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><br><br></a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="#"><br><br></a>
+              </li>
+              <li>
+                <a href="#"><br><br></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="cover-image" style="background-image : url('../../static/images/bgphoto.jpg')"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center" style="background-color: transparent;border: lightblue 1px solid;border-radius: 10px;">
+            <h1>Admin
+              <br>
+            </h1>
+            <p></p>
+            <form  class="form-horizontal col-sm-12 col-sm-offset-1" role="form" action="/manage/login" method="post">
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="ids" class="control-label">用户名</label>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" name="ids" style="background-color: transparent;border: #2aabd2 1px solid" class="form-control" id="ids" placeholder="用户名">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="email" class="control-label">邮箱</label>
+                </div>
+                <div class="col-sm-6">
+                  <input type="password" name="email" style="background-color: transparent" class="form-control" id="email" placeholder="邮箱">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="password" class="control-label">密码</label>
+                </div>
+                <div class="col-sm-6">
+                  <input type="password" name="password" style="background-color: transparent" class="form-control" id="password" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                  <div class="checkbox">
+                    {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                        <ul class=flashes>
+                        {% for message in messages %}
+                          <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                      {% endif %}
+                    {% endwith %}
+                    <label><input type="checkbox">Remember me</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+            		<input type="submit" id="logins" value="登录"  class="btn btn-block btn-primary"></input>
+
+                </div>
+              </div>
+              <div class="form-group">
+					<div class="col-sm-offset-2 col-sm-6">
+						<output id="mes"></output>
+					</div>
+				</div>
+            </form>
+
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

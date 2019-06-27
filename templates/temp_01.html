@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message</title>
+</head>
+<body>
+    {% if name %}
+        <h1>Hello {{ name }}! your age is {{ age }}.</h1>
+    {% else %}
+        <h1>Hello, World!</h1>
+    {% endif %}
+    {% if ids|length !=0 %}
+        {% for foo in ids %}
+            {{ foo }}
+        {% endfor %}
+    {% endif %}
+
+{#    {% for key, value in my_dict.iteritems() %}#}
+{#        <dt>{{ key|e }}</dt>#}
+{#        <dd>{{ value|e }}</dd>#}
+{#    {% endfor %}#}
+{##}
+{#    {% for row in rows %}#}
+{#        <li class="{{ loop.cycle('odd', 'even') }}">{{ row }}</li>#}
+{#    {% endfor %}#}
+
+    {% filter upper %}
+        This text becomes uppercase
+    {% endfilter %}
+</body>
+</html>

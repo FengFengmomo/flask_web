@@ -1,0 +1,32 @@
+from flask import Blueprint,render_template, request
+from models.models2 import Admin
+from util import db
+
+admin = Blueprint('admin',__name__)
+
+@admin.route('/index')
+def index():
+    return render_template('admin/index.html')
+
+@admin.route('/add/',methods=['POST','GET'])
+def add():
+    if request.method == 'POST':
+        p_admin = request.form.get('username',None)
+        p_email = request.form.get('email',None)
+        p_password = request.form.get('password',None)
+
+        if not p_admin or not p_email or not p_password:
+            return 'input error'
+
+        newobj = Admin(username=p_admin, email=p_email, password=p_password)
+        # db = g.db
+        db.session.add(newobj)
+        db.session.commit()
+        admins = Admin.query.all()
+        return render_template('admin/add.html',admins=admins)
+    admins = Admin.query.all()
+    return render_template('admin/add.html',admins=admins)
+
+@admin.route('/show')
+def show():
+    return 'admin_show'

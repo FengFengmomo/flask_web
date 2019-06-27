@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% include 'includesfile.html' without context %}
+    <h1>body</h1>
+    <div>
+        <ul>
+        {%- for box in boxes -%}
+            {% include "render_box.html" %}
+        {%- endfor -%}
+        </ul>
+    </div>
+    {% include 'temp_01.html'  %}
+</body>
+</html>
+
+
+{#{% include "sidebar.html" ignore missing %}#}
+{#{% include "sidebar.html" ignore missing with context %}#}
+{#{% include "sidebar.html" ignore missing without context %}#}
+
+{#{% from 'forms.html' import input with context %}#}
+{#{% include 'header.html' without context %}#}
+
+
+{#{% include ['page_detailed.html', 'page.html'] %}#}
+{#{% include ['special_sidebar.html', 'sidebar.html'] ignore missing %}#}

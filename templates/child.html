@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>Index</h1>
+    <p class="important">
+      Welcome on my awesome homepage.
+    </p>
+    {% if name %}
+        <h1>Hello {{ name }}! your age is {{ age }}.</h1>
+    {% else %}
+        <h1>Hello, World!</h1>
+    {% endif %}
+    {% if ids|length !=0 %}
+        {% for foo in ids %}
+            {{ foo }}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

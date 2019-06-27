@@ -1,0 +1,2 @@
+import tushare
+tushare.get
