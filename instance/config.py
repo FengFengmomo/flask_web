@@ -11,6 +11,6 @@ DEBUG = True
 SECRET_KEY = 'flask development'
 # DATABASE = os.path.join(app.instance_path, 'flaskr.sqlite')
 MAX_CONTENT_LENGTH = 1600 * 1024 * 1024 #1600M
-SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:qq125680..@localhost:3306/test2?charset=utf8"
+SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:qq125680..@localhost:3306/test?charset=utf8"
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','csv','xslx'])

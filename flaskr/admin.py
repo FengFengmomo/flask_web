@@ -1,6 +1,5 @@
 from flask import Blueprint,render_template, request
 from models.models2 import Admin
-from util import db
 
 admin = Blueprint('admin',__name__)
 

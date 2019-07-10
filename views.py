@@ -4,13 +4,14 @@ from tools import tools
 from flask import g,url_for
 from manage.manage import manage
 from models.database import db_session,init_db
-
+from chromecontroller.flask_and_asyncio import tasks
 
 def register_views(app):
     app.register_blueprint(admin, url_prefix='/admin')
     app.register_blueprint(user, url_prefix='/user')
     app.register_blueprint(tools, url_prefix='/')
     app.register_blueprint(manage,url_prefix='/manage')
+    app.register_blueprint(tasks,url_prefix='/tasks')
     @app.teardown_appcontext
     def close_db(e = None):
         db_session.remove()

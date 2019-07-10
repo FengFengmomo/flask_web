@@ -1,6 +1,6 @@
 from flask import Blueprint,render_template, request
 from models.models2 import Users
-from util import db
+# from util import db
 user = Blueprint('users',__name__)
 @user.route('/index')
 def index():
